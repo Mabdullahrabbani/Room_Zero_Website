@@ -1,5 +1,4 @@
-const API = "http://127.0.0.1:8000";
-
+const API = "https://room-zero-website-seven.vercel.app";
 document.addEventListener('DOMContentLoaded', function () {
 
     // ---------- Single-page navigation ----------
