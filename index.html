@@ -18,7 +18,7 @@
             <a href="index.html" class="nav-link active">Home</a>
             <a href="about.html" class="nav-link">About Us</a>
             <a href="reviews.html" class="nav-link">Reviews</a>
-            <a href="#booking-modal" class="nav-link">Book Now</a>
+            <a href="#home" class="nav-link">Book Now</a>
         </nav>
     </header>
 
@@ -29,7 +29,7 @@
                 <p>YOUR ESCAPE BEGINS AT ZERO.</p>
             </div>
             <div class="rooms-grid">
-                <div class="room-card" data-room="VICTORIAN DETECTIVE MYSTERY">
+                <div class="room-card" data-room-id="1" data-room="VICTORIAN DETECTIVE MYSTERY">
                     <img src="images\victorian.png" alt="Victorian Detective Mystery Room Image">
                     <h3>VICTORIAN DETECTIVE MYSTERY</h3>
                     <p>Sherlock style investigation with hidden journals, coded phones, and secret compartments.<br><br></p>
@@ -38,8 +38,8 @@
                     <p>Price: $30/person</p>
                     <button class="book-btn">BOOK NOW</button>
                 </div>
-                <div class="room-card" data-room="HAUNTED MANSION ESCAPE">
-                    <img src="images\image.png" alt="Victorian Detective Mystery Room Image">
+                <div class="room-card" data-room-id="2" data-room="HAUNTED MANSION ESCAPE">
+                    <img src="images\image.png" alt="Haunted Mansion Escape Room Image">
                     <h3>HAUNTED MANSION ESCAPE</h3>
                     <p>Mysterious flickering lights, talking portraits, and séance table clues<br><br></p>
                     <p>Difficulty: Medium</p>
@@ -47,8 +47,8 @@
                     <p>Price: $35/person</p>
                     <button class="book-btn">BOOK NOW</button>
                 </div>
-                <div class="room-card" data-room="SPACESHIP CRASH LANDING">
-                    <img src="images\image copy.png" alt="Victorian Detective Mystery Room Image">
+                <div class="room-card" data-room-id="3" data-room="SPACESHIP CRASH LANDING">
+                    <img src="images\image copy.png" alt="Spaceship Crash Landing Room Image">
                     <h3>SPACESHIP CRASH LANDING</h3>
                     <p>Repair control panels, follow AI commands, and escape before the sun explodes.<br><br></p>
                     <p>Difficulty: Hard</p>
@@ -56,8 +56,8 @@
                     <p>Price: $40/person</p>
                     <button class="book-btn">BOOK NOW</button>
                 </div>
-                <div class="room-card" data-room="TIME TRAVELER'S LAB">
-                    <img src="images\image copy 2.png" alt="Victorian Detective Mystery Room Image">
+                <div class="room-card" data-room-id="4" data-room="TIME TRAVELER'S LAB">
+                    <img src="images\image copy 2.png" alt="Time Traveler's Lab Room Image">
                     <h3>TIME TRAVELER'S LAB</h3>
                     <p>Jump between timelines and solve puzzles in different eras.<br><br></p>
                     <p>Difficulty: Extreme</p>
@@ -65,7 +65,7 @@
                     <p>Price: $45/person</p>
                     <button class="book-btn">BOOK NOW</button>
                 </div>
-                <div class="room-card" data-room="FLOOR ZERO">
+                <div class="room-card" data-room-id="5" data-room="FLOOR ZERO">
                     <img src="images\image copy 3.png" alt="Floor Zero Escape Room Image">
                     <h3>FLOOR ZERO</h3>
                     <p>The experience resets. Define your own impossibility. Your unique challenge starts here, built from the ground up to test your limits.<br><br></p>
@@ -74,7 +74,7 @@
                     <p>Price: According to Customization</p>
                     <button class="book-btn">BOOK NOW</button>
                 </div>
-                <div class="room-card" data-room="THE FORGOTTEN FACILITY (Big Room)">
+                <div class="room-card" data-room-id="6" data-room="THE FORGOTTEN FACILITY (Big Room)">
                     <img src="images\image copy 4.png" alt="Forgotten Facility Room Image">
                     <h3>THE FORGOTTEN FACILITY (Big Room)</h3>
                     <p>A huge research facility with teamwork puzzles, power restoration, hidden passages, and optional Hunter Mode (1–4 hunters).<br><br></p>
@@ -96,8 +96,15 @@
             <span class="close">&times;</span>
             <h2 id="modal-title">Room: [Room Name]</h2>
             <form id="booking-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="players">Number of Players:</label>
+                <input type="number" id="players" min="1" max="12" required>
+
                 <label for="date">Date of Entry:</label>
                 <input type="date" id="date" required>
+
                 <label for="time">Time Slot:</label>
                 <select id="time" required>
                     <option value="">Select Time</option>
@@ -107,8 +114,11 @@
                     <option value="16:00">4:00 PM</option>
                     <option value="18:00">6:00 PM</option>
                 </select>
+
                 <label for="email">Contact Email:</label>
                 <input type="email" id="email" required>
+
+                <p id="error-message" style="color:#ff4d4d;"></p>
                 <button type="submit" class="submit-btn">INITIATE BOOKING</button>
             </form>
             <div id="success-message" class="hidden">BOOKING INITIATED!</div>

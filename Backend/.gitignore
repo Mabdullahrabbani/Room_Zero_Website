@@ -1,0 +1,12 @@
+
+.env
+Backend/.env
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.db
+roomzero.db
+.vscode/
+.DS_Store
+Thumbs.db
