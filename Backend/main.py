@@ -7,6 +7,7 @@ from sqlalchemy.exc import IntegrityError
 import smtplib
 import models
 import schemas
+import seed 
 app = FastAPI()
 Base.metadata.create_all(bind=engine)
 app.add_middleware(
